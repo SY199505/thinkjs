@@ -1,0 +1,105 @@
+/* common start */
+* {
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: none; }
+
+html {
+  font-size: 20px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clearfix {
+  display: table;
+  content: '';
+  clear: both; }
+
+/* common end */
+.article-box {
+  border-top: 1px solid #e6e8eb;
+  width: 747px; }
+  .article-box .article-list li {
+    border-bottom: 1px solid #e6e8eb; }
+    .article-box .article-list li a :hover {
+      background-color: #f2f2f2; }
+    .article-box .article-list li a .article-info {
+      padding: 20px 0;
+      width: 747px; }
+      .article-box .article-list li a .article-info img {
+        width: 13rem;
+        height: 7.5rem; }
+      .article-box .article-list li a .article-info .article-display {
+        width: 467px;
+        position: relative;
+        height: 150px; }
+        .article-box .article-list li a .article-info .article-display .title {
+          font-size: 22px;
+          color: #000;
+          margin-bottom: 5px;
+          font-weight: bolder; }
+        .article-box .article-list li a .article-info .article-display .intro {
+          font-size: .65em;
+          color: #828a92; }
+        .article-box .article-list li a .article-info .article-display .writer-box {
+          font-size: .65em;
+          color: #999;
+          position: absolute;
+          bottom: 0; }
+
+.article-detail {
+  font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,STHeitiSC-Light,simsun,\\5B8B\4F53,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+  width: 720px;
+  line-height: 2;
+  padding: 1.5rem 0;
+  margin-right: 10%; }
+  .article-detail .title {
+    color: #3d464d;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    text-align: left;
+    line-height: 36px; }
+  .article-detail .info {
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    color: #999;
+    margin-bottom: 1.4rem; }
+    .article-detail .info .writer {
+      color: #4285f4; }
+  .article-detail .intro {
+    padding: 15px 0;
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 0; }
+    .article-detail .intro:after {
+      display: block;
+      width: 160px;
+      height: 4px;
+      border-radius: 3px;
+      background: #efefef;
+      content: "";
+      margin-top: 1rem; }
+  .article-detail img {
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 5px;
+    vertical-align: middle; }
+  .article-detail .content {
+    line-height: 30px;
+    font-size: 16px;
+    color: #3d464d; }
+
+/*# sourceMappingURL=article.css.map */
