@@ -7,8 +7,14 @@ export default class extends Base {
    * index action
    * @return {Promise} []
    */
-  indexAction(){
+  async indexAction(){
     //auto render template file index_index.html
-    return this.display();
+    let articleModel = this.model('article');
+    let articleList = await articleModel.getArticleList();
+    this.assign({
+    	articleList: articleList
+    });
+    // return this.success(articleList);
+    return this.display('index');
   }
 }
