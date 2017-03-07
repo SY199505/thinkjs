@@ -11,3 +11,5 @@
  * })
  * 
  */
+var reactRender = require('think-react-render');
+think.middleware('react_render', reactRender);
