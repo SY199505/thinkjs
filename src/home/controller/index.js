@@ -14,7 +14,20 @@ export default class extends Base {
     this.assign({
     	articleList: articleList
     });
-    // return this.success(articleList);
+    /*this.assign('title', articleList[0].title);
+    this.assign('intro', articleList[0].intro);
+    this.assign('img', articleList[0].img);
+    this.assign('content', articleList[0].content);*/
     return this.display('index');
+  }
+  async detailAction(){
+    let articleModel = this.model('article');
+    let url = this.http;
+    let articleDetail = await articleModel.getArticleDetail();
+    this.assign({
+    	articleDetail: articleDetail,
+    	url: url
+    });  	
+    return this.display();
   }
 }

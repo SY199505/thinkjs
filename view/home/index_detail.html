@@ -14,9 +14,23 @@
 创建文章和编辑文章复用同一个页面，如果参数中有文章的id,则为编辑状态，否则为新建
 该能够修改文章的标题，封面图片（填URL即可），内容（使用百度的ueditor）
 UI的样式，根据以上描述按个人理解随意发挥即可 -->
-    <div id="container">container</div>    
+    <!-- <div id="container">container</div>     -->
+<div class="article-detail">
+    <h1 class="title"><%= articleDetail.title %></h1>
+    <div class="info clearfix">
+        <a href="javascript:void(0);" class="writer fl"><%= url.pathname %>肖芸芸</a>
+        <span class="fl">&nbsp;•&nbsp;</span>
+        <div class="write-time fl">3小时前</div>
+        <span class="fl">&nbsp;•&nbsp;</span>
+        <div class="subtitle fl">明星公司</div>
+    </div>
+    <p class="intro">豪掷2亿美元买下这家人工智能公司的三星，马上就会有自己的智能语音助手了，要与苹果Siri和Google Assistant一较高下。</p>
+    <img src="/static/img/viv.jpg" alt=""/>
+    <div class="content">content</div>
+    <a href="javascript:void(0);" class="edit">编辑此文章</a>
+</div>        
 </body>
-<script src="/static/js/react-15.3.1/build/react.js"></script>
+<!-- <script src="/static/js/react-15.3.1/build/react.js"></script>
 <script src="/static/js/react-15.3.1/build/react-dom.js"></script>
 <script src="/static/js/react-15.3.1/browser.js"></script>
 <script type="text/babel">  
@@ -37,5 +51,5 @@ UI的样式，根据以上描述按个人理解随意发挥即可 -->
         </div>,
         document.getElementById('container')
     );   
-</script>
+</script> -->
 </html>

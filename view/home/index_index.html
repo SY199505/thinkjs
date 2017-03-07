@@ -15,37 +15,27 @@
 该能够修改文章的标题，封面图片（填URL即可），内容（使用百度的ueditor）
 
 UI的样式，根据以上描述按个人理解随意发挥即可 -->
-    <div id="container"></div>    
-</body>
-<script src="/static/js/react-15.3.1/build/react.js"></script>
-<script src="/static/js/react-15.3.1/build/react-dom.js"></script>
-<script src="/static/js/react-15.3.1/browser.js"></script>
-<script type="text/babel">  
-    ReactDOM.render(
-        <div className="article-box">
-            <ul className="article-list">
-            <% for(var i=0; i<=articleList.length; i++){ %>
-                <li>
-                    <a href="javascript:void(0);">
-                        <div className="article-info clearfix">
-                            <img className="fl" src="/static/img/viv.jpg" alt=""/>
-                            <div className="article-display fr">
-                                <div className="title"><%= articleList[i].title %></div>
-                                <div className="intro">豪掷2亿美元买下这家人工智能公司的三星，马上就会有自己的智能语音助手了，要与苹果Siri和Google Assistant一较高下。
-                                </div>
-                                <div className="writer-box">
-                                    <div className="writer fl">肖芸芸</div>
-                                    <span className="fl">·</span>
-                                    <div className="time fl">15分钟前</div>
-                                </div>
-                            </div>
+<div class="article-box">
+    <ul class="article-list">
+        <% for(var i=0; i<articleList.length; i++){ %>
+        <li>
+            <a href="/index/detail/<%= articleList[i].id %>">
+                <div class="article-info clearfix">
+                    <img class="fl" src="/static/img/viv.jpg" alt=""/>
+                    <div class="article-display fr">
+                            <div class="title"><%= articleList[i].title %></div>
+                        <div class="intro"><%= articleList[i].intro %></div>
+                        <div class="writer-box">
+                            <div class="writer fl"><%= articleList[i].writer %></div>
+                            <span class="fl">·</span>
+                            <div class="time fl">15分钟前</div>
                         </div>
-                    </a>
-                </li>
-            <% } <%>
-            </ul>
-        </div>,
-        document.getElementById('container')
-    );   
-</script>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+</div>
+</body>
 </html>
