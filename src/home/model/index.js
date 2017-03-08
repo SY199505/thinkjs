@@ -8,6 +8,6 @@ export default class extends think.model.base {
 	}
 	getArticleDetail(id){
 		// return this.where({id: id}).select();
-		return this.where({id: 1}).select();
+		return this.where({id: id}).select();
 	}
 }

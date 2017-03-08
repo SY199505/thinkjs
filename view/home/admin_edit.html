@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Article</title>
+<link rel="stylesheet" href="/static/css/article.css" type="text/css">
+</head>
+<body>
+  <!-- 前台有详情页和列表页：
+列表页：有封面图片，文章标题，发布时间（样式参考主页列表模块）
+详情页：有标题，封面图，发布时间，文章正文内容（参考文章详情页）页面底部有一个编辑该文章的链接 ，点击后进入后台对应的文章编辑页
+
+后台能够创建文章和编辑文章：
+创建文章和编辑文章复用同一个页面，如果参数中有文章的id,则为编辑状态，否则为新建
+该能够修改文章的标题，封面图片（填URL即可），内容（使用百度的ueditor）
+
+UI的样式，根据以上描述按个人理解随意发挥即可 -->
+    <div class="edit-box">
+    	<%= id %>
+    	<%= isEmpty %>
+    	<%= object %>
+    	<%= articleDetail %>
+        <input type="text" class="title" value="<%= articleDetail.title %>">
+        <input type="text" class="img" value="<%= articleDetail.img %>">
+        <input type="textarea" class="content">
+        <button>YES</button>
+    </div>
+</body>
+</html>

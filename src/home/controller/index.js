@@ -22,11 +22,11 @@ export default class extends Base {
   }
   async detailAction(){
     let articleModel = this.model('article');
-    let url = this.http;
-    let articleDetail = await articleModel.getArticleDetail();
+    let id = this.http.pathname.substr(7);
+    let articleDetail = await articleModel.getArticleDetail(id);
     this.assign({
     	articleDetail: articleDetail,
-    	url: url
+    	id: id
     });  	
     return this.display();
   }
