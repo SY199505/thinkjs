@@ -23,10 +23,30 @@ UI的样式，根据以上描述按个人理解随意发挥即可 -->
             <input type="text" name="writer" class="writer" value="<%= articleDetail.writer %>">
             <input type="text" name="intro" class="intro" value="<%= articleDetail.intro %>">
             <input type="text" name="img" class="img" value="<%= articleDetail.img %>">
-            <input type="textarea" name="content" class="content" value="<%= articleDetail.content %>">
+            <textarea name="content" id="UEditor" class="content"><%= articleDetail.content %></textarea>
             <button id="btn" type="submit" formaction="/admin/save">button</button>
         </form>
 
     </div>
 </body>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="/static/js/utf8-php/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/static/js/utf8-php/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('UEditor');
+    </script>
+    <script>
+        var ue = UE.getContent();
+        //对编辑器的操作最好在编辑器ready之后再做
+        ue.ready(function() {
+            //设置编辑器的内容
+            ue.setContent('hello');
+            //获取html内容，返回: <p>hello</p>
+            var html = ue.getContent();
+            //获取纯文本内容，返回: hello
+            var txt = ue.getContentTxt();
+        });    
+    </script>    
 </html>
