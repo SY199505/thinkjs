@@ -9,15 +9,9 @@ export default class extends Base {
     let isEmpty = think.isEmpty(articleModel.getArticleDetail(id));
     let object = articleModel.where({id: id}).find();
     let articleDetail = await articleModel.getArticleDetail(id);
-    let post = this.post();
-
-
     this.assign({
     	articleDetail: articleDetail,
-    	id: id,
-      isEmpty: isEmpty,
-      object: object,
-      post: post
+    	id: id
     });  	
   	return this.display();
   }
@@ -25,13 +19,15 @@ export default class extends Base {
     let articleModel = this.model('article');
     let id = this.http.pathname.substr(5);
     let post = this.post();
-    // let articleDetail = await articleModel.updateArticleDetail(id, title, intro, img, content, writer);
+    let articleDetail = await articleModel.updateArticleDetail(post.id, post.title, post.intro, post.img, post.content, post.writer);
     let articleList = await articleModel.getArticleList();
     this.assign({
       articleList: articleList,
-      post: post
+      articleDetail: articleDetail
     });    
-    // return this.redirect();
-    return this.display('/admin/edit');
+    console.log(post);
+    return this.redirect();
+    // return this.display('/admin/edit');
+    // return this.display();
   }
 }

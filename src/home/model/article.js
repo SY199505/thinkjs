@@ -10,7 +10,7 @@ export default class extends think.model.base {
 		// return this.where({id: id}).select();
 		return this.where({id: id}).find();
 	}
-	updateArticleDetail(id){
+	updateArticleDetail(id, title, intro, img, content, writer){
 		return this.where({id: id}).update({
 			title: title, 
 			intro: intro, 

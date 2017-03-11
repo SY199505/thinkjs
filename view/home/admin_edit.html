@@ -17,26 +17,16 @@
 UI的样式，根据以上描述按个人理解随意发挥即可 -->
     <div class="edit-box">
 
-        <form action="11" method="post">
-        	<%= id %>
-        	<%= isEmpty %>
-        	<%= object %>
-            <%= articleDetail %>
-        	<%= post.title %>
-            <input type="text" class="title" value="<%= articleDetail.title %>">
-            <input type="text" class="img" value="<%= articleDetail.img %>">
-            <input type="textarea" class="content" value="<%= articleDetail.content %>">
-            <a id="save" href="/admin/save/<% id %>">a</a>
-            <button id="btn" type="submit">button</button>
+        <form method="post">
+            <input type="text" name="id" class="id" value="<%= id %>" style="display: none;">
+            <input type="text" name="title" class="title" value="<%= articleDetail.title %>">
+            <input type="text" name="writer" class="writer" value="<%= articleDetail.writer %>">
+            <input type="text" name="intro" class="intro" value="<%= articleDetail.intro %>">
+            <input type="text" name="img" class="img" value="<%= articleDetail.img %>">
+            <input type="textarea" name="content" class="content" value="<%= articleDetail.content %>">
+            <button id="btn" type="submit" formaction="/admin/save">button</button>
         </form>
 
     </div>
 </body>
-    <script>
-        var oSave = document.getElementById('save');
-        var oBtn = document.getElementById('btn');
-        oBtn.onclick = function(){
-            alert(1)
-        };
-    </script>
 </html>
